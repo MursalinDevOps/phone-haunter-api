@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Haunter API</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.10.5/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-4xl text-center p-5">
+        Phone Haunter API
+        <span><small>(Application Programming Interface)</small></span>
+      </h1>
+    </header>
+    <main>
+      <!-- SECTION 01 -->
+      <section class="p-4 m-4 text-center">
+        <div>
+          <input
+            id="search-field"
+            type="text"
+            placeholder="Search here ..."
+            class="input input-bordered input-accent w-full max-w-xs"
+          />
+          <button onclick="handleSearch()" class="mx-5 btn btn-outline btn-success">
+            Search
+          </button>
+        </div>
+      </section>
+      <!-- SECTION 02 -->
+
+      <section class="container mx-auto">
+        <!-- spinner or loader -->
+        <div id="loading-spinner" class="my-40 text-center hidden">
+          <span class="text-success loading loading-spinner loading-lg"></span>
+        </div>
+        <div
+          id="phone-container"
+          class="text-black grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center"
+        >
+          <!-- <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div> -->
+        </div>
+        <div id="show-all-container" class="hidden text-center my-8">
+          <button onclick="handleShowAll()" class="btn btn-outline btn-info my-4">Show All</button>
+        </div>
+      </section>
+
+                                              <!-- Section 03 -->
+      <!-- MODAL -->
+      <section class="modal-container">
+        <div>
+          <!-- Open the modal using ID.showModal() method -->
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div class="show-details-container">
+
+
+    </div>
+    <img src="show-image" alt="">
+    <p id="show-phone-name" class="font-bold text-lg"></p>
+    <p id="show-release-date" class="py-4"></p>
+    <p id="show-chipset" class="py-2"></p>
+    <p id="show-display-size" class="py-2"></p>
+    <p id="show-memory" class="py-2"></p>
+    <p id="show-storage" class="py-2"></p>
+    <p id="show-sensors" class="py-2"></p>
+    <p id="show-blurtooth" class="py-2"></p>
+    <p id="show-wifi" class="py-2"></p>
+    
+
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+
+    <script src="scripts/phone.js"></script>
+  </body>
+</html>
